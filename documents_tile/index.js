@@ -48,7 +48,7 @@ function auth(req) {
         simple: false,
         uri: getEnvironmentVariable("validatePartnerEndpoint"), //Using dev for now. Prod one is in env variables
         headers: {
-            'Authorization': 'Basic ' + new Buffer(`${getEnvironmentVariable("clientId")}:${getEnvironmentVariable("clientSecret")}`).toString('base64')
+            'Authorization': 'Basic ' + getEnvironmentVariable("clientIdSecret")
         },
         body: {
             "token": guidToken
